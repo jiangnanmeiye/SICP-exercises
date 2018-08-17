@@ -41,7 +41,7 @@
     (search-for-range-primes startNum (+ startNum 1000)))
 
 (define (search-for-range-primes startNum endNum)
-    (report-prime startNum)
+    (timed-prime-test startNum)
     (if (< startNum endNum)
         (search-for-range-primes (+ startNum 1) endNum)))
 
