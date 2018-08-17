@@ -8,6 +8,16 @@
        ((divides? test-divisor n) test-divisor)
        (else (find-divisor n (+ test-divisor 1)))))
 
+(define (next n)
+    (if (= n 2)
+        3
+        (+ n 2)))
+
+(define (find-divisor2 n test-divisor)
+    (cond ((> (square test-divisor)) n)
+        ((divides? test-divisor n) test-divisor)
+        (else (find-divisor2 n (next test-divisor)))))
+
 (define (divides? a b)
   (= (remainder b a) 0))
 
@@ -34,3 +44,5 @@
     (report-prime startNum)
     (if (< startNum endNum)
         (search-for-range-primes (+ startNum 1) endNum)))
+
+(search-for-primes 1000000)
