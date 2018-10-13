@@ -13,4 +13,16 @@
 
 ;;except-first-denomination
 (define (except-first-denomination list)
-  )
+  (cdr list))
+
+;;first-denomination
+(define (first-denomination list)
+  (car list))
+
+;;no-more
+(define (no-more? list)
+  (if (null? list)
+      #t
+      #f))
+
+(cc 100 us-coins)
