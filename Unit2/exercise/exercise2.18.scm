@@ -35,3 +35,14 @@
 	(cons last-item (reverse (pair-except-last list))))))
 
 (reverse (list 1 2 3 4 5 6))
+
+
+;;Iteration method
+(define (reserve1 list)
+  (define (iter items result)
+    (if (= 0 (length items))
+	result
+	(iter (cdr items) (cons (car items) result))))
+  (iter list '()))
+
+(reserve1 (list 1 2 3 4 5 6 7))
