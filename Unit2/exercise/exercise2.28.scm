@@ -1,0 +1,12 @@
+(define (fringe lst)
+  (define (iter items result)
+    (cond ((null? items)
+	   result)
+	  ((not (pair? (car items)))
+	   items)
+	  (else (append (iter (car items) result)
+			(iter (cadr items) result)))))
+  (iter lst '()))
+
+(define x (list (list 1 2) (list 3 4)))
+(fringe (list x x))
